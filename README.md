@@ -80,10 +80,11 @@ Change `SeedAdmin` and `Jwt:Secret` before deploying to production.
 dotnet run --project WebApi/WebApi.csproj
 ```
 
-Open `http://localhost:5176` in a browser to access the static test frontend.
+- Local frontend: `http://localhost:5176`
+- Local Swagger UI: `http://localhost:5176/swagger`
 
 ## Deployment
 
-- Backend (Render): Deploy as a Docker Web Service using the root `Dockerfile` and configure `MONGODB_URI`, `MONGODB_DATABASE`, and `JWT_SECRET`.
-- Frontend (Vercel or Netlify): Deploy the `WebApi/wwwroot` directory as a static site and set the API URL field in the top bar (or deploy together from `WebApi`).
+- Backend (Render): Deployed as a Docker Web Service (`Dockerfile`). Root `/` automatically redirects to `/swagger` for interactive API documentation.
+- Frontend (Vercel): Deployed as a static SPA at `https://secure-notes-frontend-liart.vercel.app/`.
 
